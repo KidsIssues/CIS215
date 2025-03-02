@@ -2,69 +2,32 @@
     <html lang="en-US">
 <head>
     <meta charset="utf-8">
-    <title>Survey: Dogs</title>  <!-- TODO: Change "Survey Name" to the topic of your survey -->
+    <title>Survey: Dogs</title>  
 </head>
 <body>
 
 
-<!-- TODO: Fix all bugs/poor practice in the form -->
+
 <form action="Processing.php" method="post" class="survey">
 
 <div>
     <fieldset>
         <legend>Enter your email: </legend>
-            <input type="email" name="email-name" id="email-id">
+            <input type="email" name="email-name" id="email-id" minlength="5" required>
     </fieldset>
 </div>
 
 <div>
     <fieldset>
         <legend>Enter your password: </legend>
-            <input type="text" name="pw-name" id="pw-id">
+            <input type="password" name="pw-name" id="pw-id" minlength="8" required>
     </fieldset>
 </div>
 
 <div>
     <fieldset>
         <legend>What age are you?</legend>
-            <input type="radio" name="age" id="0">
-            <label>0-12 </label>
-
-            <input type="radio" name="age" id="1">
-            <label>13-17 </label>
-
-            <input type="radio" name="age" id="2">
-            <label>18-22 </label>
-
-            <input type="radio" name="age" id="3">
-            <label>23-27 </label>
-
-            <input type="radio" name="age" id="4">
-            <label>28-32 </label>
-
-            <input type="radio" name="age" id="5">
-            <label>33-37 </label>
-
-            <input type="radio" name="age" id="6">
-            <label>38-42 </label>
-
-            <input type="radio" name="age" id="7">
-            <label>43-47 </label>
-
-            <input type="radio" name="age" id="8">
-            <label>48-52 </label>
-
-            <input type="radio" name="age" id="9">
-            <label>53-57 </label>
-
-            <input type="radio" name="age" id="10">
-            <label>58-62 </label>
-
-            <input type="radio" name="age" id="11">
-            <label>63-67 </label>
-
-            <input type="radio" name="age" id="12">
-            <label>68+ </label>
+            <input type="number" name="age" id="age" min="5" max="127" required>
     </fieldset>
 </div>
 
@@ -84,11 +47,27 @@
 
 <div>
     <fieldset>
-        <legend>Blargus</legend>
-        
+        <legend>Do you currently own a dog/cat?</legend>
+        <input type="checkbox" name="dog" id="dog">
+        <label for="dog">Dog</label>
+
+        <input type="checkbox" name="cat" id="cat">
+        <label for="cat">Cat</label>
+
+        <input type="checkbox" name="other" id="other">
+        <label for="other">Other</label>
     </fieldset>
 </div>
-<!-- TODO: Add your own survey questions -->
+
+<div>
+    <fieldset>
+        <legend>What year did you get your pet?</legend>
+        <input type="month" name="date" id="date" min="2000-01" >
+
+    </fieldset>
+</div>
+
+
 <div>
     <button type="submit" name="submit-button" id="submit-button"><h6>Submit</h6></button>
 </div>
