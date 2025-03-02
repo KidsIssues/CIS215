@@ -76,7 +76,6 @@
 <?php 
 include 'dbconfig.php';
 $db = connectDB();
-$db -> query("CREATE TABLE phptest (idtest INT PRIMARY KEY AUTO_INCREMENT, Success VARCHAR(20));")
 ?>
 
 <!-- TODO: All the backend PHP/SQL stuff! (you may need a separate file for this!) -->

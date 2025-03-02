@@ -12,6 +12,8 @@
 
 <?php
     $un_sanitized_email = $_POST["email-name"];
+    $un_validated_password = $_POST["pw-name"];
+    $un_validated_age = $_POST["age"];
 
     $sanitized_email = filter_var($un_sanitized_email, FILTER_SANITIZE_EMAIL);
     if (filter_var($sanitized_email, FILTER_VALIDATE_EMAIL)) {
@@ -19,6 +21,14 @@
     } else {
         echo "This (b) sanitized email address is considered invalid.\n";
     }
+
+if (is_numeric($un_validated_age)) {
+    $validated_age = $un_validated_age;
+    echo "This (a) validated age is considered valid.\n";
+} else {
+    echo "This (b) validated age is considered invalid.\n";
+}
+
 
 ?>
 
