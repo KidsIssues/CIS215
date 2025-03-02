@@ -8,7 +8,7 @@
 
 
 
-<form action="Processing.php" method="post" class="survey">
+<form action="Processing.php" method="post" class="survey-form">
 
 <div>
     <fieldset>
@@ -63,7 +63,6 @@
     <fieldset>
         <legend>What year did you get your pet?</legend>
         <input type="month" name="date" id="date" min="2000-01" >
-
     </fieldset>
 </div>
 
