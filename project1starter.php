@@ -75,7 +75,6 @@
 
 <?php 
 include 'dbconfig.php';
-$db = connectDB();
 ?>
 
 <!-- TODO: All the backend PHP/SQL stuff! (you may need a separate file for this!) -->
