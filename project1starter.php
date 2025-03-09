@@ -48,13 +48,13 @@
 <div>
     <fieldset>
         <legend>Do you currently own a dog/cat?</legend>
-        <input type="checkbox" name="dog" id="dog">
+        <input type="checkbox" name="animal" id="dog">
         <label for="dog">Dog</label>
 
-        <input type="checkbox" name="cat" id="cat">
+        <input type="checkbox" name="animal" id="cat">
         <label for="cat">Cat</label>
 
-        <input type="checkbox" name="other" id="other">
+        <input type="checkbox" name="animal" id="other">
         <label for="other">Other</label>
     </fieldset>
 </div>
