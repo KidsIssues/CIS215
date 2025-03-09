@@ -59,9 +59,27 @@
 
 
 
-    filter_age($un_validated_age);
+    
     filter_emails($un_sanitized_email);
     filter_animal($un_validated_animal);
+    filter_age($un_validated_age);
+?>
+
+<?php 
+include 'dbconfig.php';
+
+$insert_data = $db->prepare("INSERT INTO Project2SQL (age) VALUES ($validated_age);");
+filter_age($un_validated_age);
+$insert_data->execute(array($validated_age));
+
+$insert_data = $db->prepare("INSERT INTO Project2SQL (email) VALUES ($validated_age);");
+filter_emails($un_sanitized_email);
+$insert_data->execute(array($sanitized_email));
+
+$insert_data = $db->prepare("INSERT INTO Project2SQL (petType) VALUES ($validated_age);");
+filter_animal($un_validated_animal);
+$insert_data->execute(array($validated_animal));
+
 
 ?>
 
