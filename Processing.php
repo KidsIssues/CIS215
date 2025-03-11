@@ -7,7 +7,7 @@
 
 
 
-<form action="Processing.php" method="post" class="survey-form"></form>
+<form action="project1starter.php" method="post" class="survey-form"></form>
 
 
 
@@ -43,44 +43,53 @@
 }
 
     function filter_animal ($un_validated_animal) {
-        if (strcasecmp($un_validated_animal,"dog") == 0) {
-            echo "DOG SELECTED";
+        if (is_numeric($un_validated_animal)) {
             $validated_animal = $un_validated_animal;
-        } elseif (strcasecmp($un_validated_animal,"cat") == 0) {
-            echo "CAT SELECTED";
-            $validated_animal = $un_validated_animal;
-        } elseif (strcasecmp($un_validated_animal,"other") == 0 ) {
-            echo "OTHER SELECTED";
-            $validated_animal = $un_validated_animal;
-        } else {
-            echo "ANIMAL NOT CORRECT";
         }
     }
 
 
-
     
-    filter_emails($un_sanitized_email);
-    filter_animal($un_validated_animal);
-    filter_age($un_validated_age);
+    
 ?>
 
 <?php 
 include 'dbconfig.php';
-
-$insert_data = $db->prepare("INSERT INTO Project2SQL (age) VALUES ($validated_age);");
-filter_age($un_validated_age);
-$insert_data->execute(array($validated_age));
-
-$insert_data = $db->prepare("INSERT INTO Project2SQL (email) VALUES ($validated_age);");
-filter_emails($un_sanitized_email);
-$insert_data->execute(array($sanitized_email));
-
-$insert_data = $db->prepare("INSERT INTO Project2SQL (petType) VALUES ($validated_age);");
-filter_animal($un_validated_animal);
-$insert_data->execute(array($validated_animal));
+$password = 'Diaphram';
+$hashString = password_hash($password, PASSWORD_DEFAULT);
+$Userpassword = $_POST['pw-name'];
+echo $Userpassword;
+$verified = password_verify($Userpassword, $hashString);
 
 
+
+
+
+
+        if ($verified = True) {
+            echo 'Welcome User';
+            filter_emails($un_sanitized_email);
+            filter_animal($un_validated_animal);
+            filter_age($un_validated_age);
+            
+            $insert_data = $db->prepare("INSERT INTO Project2SQL (age) VALUES ($validated_age);");
+            filter_age($un_validated_age);
+            $insert_data->execute(array($validated_age));
+    
+            $insert_data = $db->prepare("INSERT INTO Project2SQL (email) VALUES ($validated_email);");
+            filter_emails($un_sanitized_email);
+            $insert_data->execute(array($sanitized_email));
+    
+            $insert_data = $db->prepare("INSERT INTO Project2SQL (petType) VALUES ($validated_animal);");
+            filter_animal($un_validated_animal);
+            $insert_data->execute(array($validated_animal));
+        } else {
+            echo "PASSWORD INCORRECT";
+        }
+
+        
+
+       
 ?>
 
 </body>
