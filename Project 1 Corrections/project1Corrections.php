@@ -10,28 +10,28 @@
 
 <form action="Project1ProcessingCorrections.php" method="post" class="survey-form">
 
-<div>
+<div class = "form-group">
     <fieldset>
         <legend>Enter your email: </legend>
-            <input type="email" name="email-name" id="email-id" minlength="5" required>
+            <input class="form-control" type="email" name="email-name" id="email-id" minlength="5" required>
     </fieldset>
 </div>
 
-<div>
+<div class = "form-group">
     <fieldset>
         <legend>Enter your password: </legend>
-            <input type="password" name="pw-name" id="pw-id" minlength="8" required>
+            <input class="form-control" type="password" name="pw-name" id="pw-id" minlength="8" required>
     </fieldset>
 </div>
 
-<div>
+<div class = "form-group">
     <fieldset>
         <legend>What age are you?</legend>
-            <input type="number" name="age" id="age" min="5" max="127" required>
+            <input class="form-control" type="number" name="age" id="age" min="5" max="127" required>
     </fieldset>
 </div>
 
-<div>
+<div class = "form-group">
     <fieldset>
         <legend>What is your Gender?</legend>
             <select name="gender" id="gender">
@@ -45,7 +45,7 @@
     </fieldset>
 </div>
 
-<div>
+<div class = "form-group">
     <fieldset>
         <legend>Do you currently own a dog/cat?</legend>
         <input type="checkbox" name="animal" value="dog">
@@ -62,7 +62,7 @@
     </fieldset>
 </div>
 
-<div>
+<div class = "form-group">
     <fieldset>
         <legend>What year did you get your pet?</legend>
         <input type="date" name="year" id="year" min="2000-01-01" max="2025-3-31">
@@ -70,7 +70,7 @@
 </div>
 
 
-<div>
+<div class = "form-group">
     <button type="submit" name="submit-button" id="submit-button"><h6>Submit</h6></button>
 </div>
 

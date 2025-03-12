@@ -75,7 +75,7 @@ $db = connectDB();
         function filter_date ($un_validated_year, $format = 'Y-m-d') { 
            $date = DateTime::createFromFormat($format, $un_validated_year);
            $validated_date = $date && $date->format($format) == $un_validated_year;
-           echo '--This date is Valid--';
+           echo '--This date is valid--';
         }
 
         //run functions
