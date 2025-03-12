@@ -8,7 +8,7 @@
 
 
 
-<form action="dbconfig.php" method="post" class="survey-form">
+<form action="Project1ProcessingCorrections.php" method="post" class="survey-form">
 
 <div>
     <fieldset>
@@ -35,12 +35,12 @@
     <fieldset>
         <legend>What is your Gender?</legend>
             <select name="gender" id="gender">
-                <option value="m" name = "Gender">Male</option>
-                <option value="f" name = "Gender">Female</option>
-                <option value="nb" name = "Gender">Nonbinary</option>
-                <option value="gf" name = "Gender">Genderfluid</option>
-                <option value="a" name = "Gender">Agender</option>
-                <option value="o" name = "Gender">Choose not to say/Other</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="nonbinary">Nonbinary</option>
+                <option value="genderfluid">Genderfluid</option>
+                <option value="agender">Agender</option>
+                <option value="other">Choose not to say/Other</option>
             </select>
     </fieldset>
 </div>
@@ -48,13 +48,16 @@
 <div>
     <fieldset>
         <legend>Do you currently own a dog/cat?</legend>
-        <input type="checkbox" name="animal" id="dog">
+        <input type="checkbox" name="animal" value="dog">
         <label for="dog">Dog</label>
 
-        <input type="checkbox" name="animal" id="cat">
+        <input type="checkbox" name="animal" value="cat">
         <label for="cat">Cat</label>
 
-        <input type="checkbox" name="animal" id="other">
+        <input type="checkbox" name="animal" value="both">
+        <label for="both">Both</label>
+
+        <input type="checkbox" name="animal" value="other">
         <label for="other">Other</label>
     </fieldset>
 </div>
@@ -62,7 +65,7 @@
 <div>
     <fieldset>
         <legend>What year did you get your pet?</legend>
-        <input type="month" name="date" id="date" min="2000-01" >
+        <input type="date" name="year" id="year" min="2000-01-01" max="2025-3-31">
     </fieldset>
 </div>
 
