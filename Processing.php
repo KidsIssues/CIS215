@@ -38,6 +38,7 @@ $db = connectDB();
         global $validGenders;
         if (in_array($un_validated_gender, $validGenders)) {
             echo"--This gender is valid--";
+            $validated_gender = $un_validated_gender;
         } else {
             echo"--This gender is valid--";
         }
@@ -65,6 +66,7 @@ $db = connectDB();
         function filter_animal($un_validated_animal) { 
             global $validAnimals;
             if (in_array($un_validated_animal, $validAnimals)) {
+                $validated_animals = $un_validated_animal;
                 echo"--This animal is valid--";
             } else {
                 echo"--This animal is invalid--";
@@ -97,15 +99,16 @@ $Userpassword = $validated_password;
 
 if (password_verify($Userpassword, $hashString)) {
     echo "--this password is valid--";
+    global $validated_age; $validated_gender; $sanitized_email; $validated_date; $validated_animals;
+    try { 
 
-        $insert_data = $db->prepare("INSERT INTO Project2SQL (age) VALUES (?);");
-        $insert_data->execute(array($validated_age));
+        $prepared_data = $db->prepare("INSERT INTO Project2SQL (email, age, gender, petType, petAge) VALUES (?, ?, ?, ?, ?)");
+        $submitData = PDO->prepare($prepared_data);
+        $insert_data->execute(array($sanitized_email, $validated_age, $validated_gender, $validated_animals, $validated_date));
+        echo"SUCCESS!";
+    }
+        
 
-        $insert_data = $db->prepare("INSERT INTO Project2SQL (email) VALUES (?);");
-        $insert_data->execute(array($sanitized_email));
-
-        $insert_data = $db->prepare("INSERT INTO Project2SQL (petType) VALUES (?);");
-        $insert_data->execute(array($validated_animal));
 
     } else {
         echo "--This password is invalid--";
