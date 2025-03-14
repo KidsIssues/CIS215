@@ -8,7 +8,7 @@
 <form action="SQLTable.php" method="post" class="survey-form"></form>
 
 <?php
-global $validated_age; global $validated_gender; global $sanitized_email; global $validated_date; global $validated_animals; global $db;
+global $validated_age; global $validated_gender; global $sanitized_email; global $validated_year; global $validated_animals; global $db;
 include 'dbconfig.php';
 $db = connectDB();
 
@@ -18,7 +18,7 @@ $db = connectDB();
     $un_validated_age = $_POST["age"];
     $un_validated_animal = $_POST["animal"];
     $un_validated_gender = $_POST["gender"];
-    $un_validated_date = $_POST["year"];
+    $un_validated_year = $_POST["date"];
 
 
     //Sanitize text my converting special characters
@@ -75,10 +75,13 @@ $db = connectDB();
         }
 
         // filter dates
-        function filter_date ($un_validated_year, $format = 'Y-m-d') { 
-           $date = DateTime::createFromFormat($format, $un_validated_year);
-           $validated_date = $date && $date->format($format) == $un_validated_year;
-           echo '--This date is valid--';
+        function filter_date ($un_validated_year) {
+            $un_validated_year = date('d/m/y');
+            htmlspecialchars($un_validated_year);
+            global $validated_year;
+            $validated_year = $un_validated_year; 
+            echo '--This date is valid--';
+        
         }
 
         //run functions
@@ -86,7 +89,7 @@ $db = connectDB();
         filter_emails($un_sanitized_email);
         filter_animal($un_validated_animal);
         filter_genders($un_validated_gender);
-        filter_date('$un_validated_date', 'Y-m-d');
+        filter_date($un_validated_year);
 
 
 //Password verification
@@ -98,7 +101,7 @@ $Userpassword = $validated_password;
                 echo "--this password is valid--";
                 $prepared_stat = $db->prepare("INSERT INTO Project2SQL (email, age, gender, petType, petAge) VALUES (?, ?, ?, ?, ?);");
                 echo "PREPARED";
-                $prepared_stat->execute(array($sanitized_email, $validated_age, $validated_gender, $validated_animals, $validated_date));
+                $prepared_stat->execute(array($sanitized_email, $validated_age, $validated_gender, $validated_animals, $validated_year));
                 echo "SENT";
                 } else {
                     echo "--This password is invalid--";

@@ -62,10 +62,10 @@
     </fieldset>
 </div>
 
-<div class = "form-group">
+<div>
     <fieldset>
         <legend>What year did you get your pet?</legend>
-        <input type="date" name="year" id="year" min="2000-01-01" max="2025-3-31">
+        <input type="month" name="date" id="date" min="2000-01" >
     </fieldset>
 </div>
 

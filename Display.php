@@ -6,18 +6,36 @@
 </head>
 <body>
 
-
-
 <?php
 include 'dbconfig.php';
 $db = connectDB();
 
 $select = $db->prepare("SELECT * FROM Project2SQL");
 $select->execute();
-$info = $select->fetchAll();
+$info = $select->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<table class = "table table-bordered text-center bg-dark text-white">
+    <tr>
+        <td>ID</td>
+        <td>Email</td>
+        <td>Age</td>
+        <td>Gender</td>
+        <td>Animal</td>
+        <td>Pet Age</td>
+    </tr>
 
+    <?php foreach ($info as $row) : ?>
+        <tr>
+            <td><?php echo htmlspecialchars($row['id']); ?></td>
+            <td><?php echo htmlspecialchars($row['email']); ?></td>
+            <td><?php echo htmlspecialchars($row['age']); ?></td>
+            <td><?php echo htmlspecialchars($row['gender']); ?></td>
+            <td><?php echo htmlspecialchars($row['petType']); ?></td>
+            <td><?php echo htmlspecialchars($row['petAge']); ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
 
 
 
