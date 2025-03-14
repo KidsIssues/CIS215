@@ -2,8 +2,20 @@
     <html lang="en-US">
 <head>
     <meta charset="utf-8">
+    <title>Survey: Dogs</title>  
 </head>
 <body>
+
+
+
+<?php
+include 'dbconfig.php';
+$db = connectDB();
+
+$select = $db->prepare("SELECT * FROM Project2SQL");
+$select->execute();
+$info = $select->fetchAll();
+?>
 
 
 

@@ -75,6 +75,12 @@
 </div>
 
 </form>
+<form action="Display.php" method="post" class="survey-form">
+
+    <div class = "form-group">
+        <button type="submit" name="display-button" id="display-button"><h6>Display List</h6></button>
+    </div>
+</form>
 
 
 <!-- TODO: All the backend PHP/SQL stuff! (you may need a separate file for this!) -->

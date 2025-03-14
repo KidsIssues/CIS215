@@ -5,11 +5,7 @@
 </head>
 <body>
 
-
-
 <form action="SQLTable.php" method="post" class="survey-form"></form>
-
-
 
 <?php
 global $validated_age; global $validated_gender; global $sanitized_email; global $validated_date; global $validated_animals; global $db;
@@ -93,16 +89,10 @@ $db = connectDB();
         filter_date('$un_validated_date', 'Y-m-d');
 
 
-    
-
-
-
 //Password verification
 
 $hashString = '$2y$10$.oDyPlmjZC00P6sUIIRnxeD1CBTMPXfH0JshahCEuVsDNDxSSWfRy';
 $Userpassword = $validated_password;        
-
-
 
             if (password_verify($Userpassword, $hashString)) {
                 echo "--this password is valid--";
@@ -113,11 +103,13 @@ $Userpassword = $validated_password;
                 } else {
                     echo "--This password is invalid--";
                 }
-        
-
-
-
 ?>
-</body>
+        <form action="Display.php" method="post" class="survey-form">
+
+            <div class = "form-group">
+                <button type="submit" name="display-button" id="display-button"><h6>Display List</h6></button>
+            </div>
+        </form>
+    </body>
 </html>   
            
