@@ -3,6 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Survey: Dogs</title>  
+
+    <style>
+        body { background-color: lightcyan;}
+        table, th, td { border: 1px solid; text-align: center;}
+        div {align-content: center;}
+    </style>
 </head>
 <body>
 
@@ -15,28 +21,31 @@ $select->execute();
 $info = $select->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<table class = "table table-bordered text-center bg-dark text-white">
-    <tr>
-        <td>ID</td>
-        <td>Email</td>
-        <td>Age</td>
-        <td>Gender</td>
-        <td>Animal</td>
-        <td>Pet Age</td>
-    </tr>
-
-    <?php foreach ($info as $row) : ?>
+<table class = "table">
+    <thead>
         <tr>
-            <td><?php echo htmlspecialchars($row['id']); ?></td>
-            <td><?php echo htmlspecialchars($row['email']); ?></td>
-            <td><?php echo htmlspecialchars($row['age']); ?></td>
-            <td><?php echo htmlspecialchars($row['gender']); ?></td>
-            <td><?php echo htmlspecialchars($row['petType']); ?></td>
-            <td><?php echo htmlspecialchars($row['petAge']); ?></td>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Animal</th>
+            <th scope="col">Pet Age</th>
         </tr>
-    <?php endforeach; ?>
-</table>
+    </thead>
 
+    <tbody>
+        <?php foreach ($info as $row) : ?>
+            <tr>
+                <td scope="row"><?php echo htmlspecialchars($row['id']); ?></td>
+                <td scope="row"><?php echo htmlspecialchars($row['email']); ?></td>
+                <td scope="row"><?php echo htmlspecialchars($row['age']); ?></td>
+                <td scope="row"><?php echo htmlspecialchars($row['gender']); ?></td>
+                <td scope="row"><?php echo htmlspecialchars($row['petType']); ?></td>
+                <td scope="row"><?php echo htmlspecialchars($row['petAge']); ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
 
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
