@@ -12,11 +12,13 @@
 <fieldset>
 
 <label>Enter your email: </label>
-<input type="email" name="email-name" id="email-id" required>
+    <input type="email" name="email-name" id="email-id" required>
+    <div id="email-msg" class="text-info"></div>
+</fieldset>
 
-<label>Enter your password: </label>
-<input type="password" name="pw-name" id="pw-id" required>
-
+<fieldset>
+    <label>Enter your password: </label>
+    <input type="password" name="pw-name" id="pw-id" required>
 </fieldset>
 
 <div>

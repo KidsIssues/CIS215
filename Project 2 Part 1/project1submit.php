@@ -46,19 +46,24 @@ function validate(){
 
     ## This is the Email validation that doesn't work!
 
-    /* $email = filter_var($_POST["email-name"], FILTER_VALIDATE_EMAIL);
+
+    $email = filter_var($_POST["email-name"], FILTER_VALIDATE_EMAIL);
+
     $email_pieces = explode("@", $email);
     $front = '"' . $email_pieces[0] . "%" . '"';
     $back = '"' . "%" . $email_pieces[1] . '"';
+
     global $db;
     $num_emails = $db->prepare("SELECT count(email) FROM project_data where email like $front and email like $back");
     $num_emails->execute();
     $fetch_emails = $num_emails->fetchAll();
+
     # This is getting the size of the array, because all we care about is if it's empty or not
     if(count($fetch_emails) > 0){
         return "Only one entry per email.";
-    } */
+    } 
 
+    
     # Age
     $age_list = ["0"];
     for($i=13;$i<65;$i=$i + 5){
