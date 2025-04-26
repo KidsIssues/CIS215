@@ -7,9 +7,50 @@
     </head>
 <body>
 
-<!-- Big takeaways: required keyword, make sure value is in there, feel free to use other attributes! -->
 
-<form action="project1submit.php" method="post" class="survey">
+
+<!--Password HTML opening section for form below-->
+<div id="password-section">
+    <form id="password-form">
+        <input type="password" name ="pw-name" id="pw-id" placeholder="Enter your Password" required>
+        <button type="submit">Submit</button>
+        <div id="error-message" style="color:red;"></div>
+    </form>
+</div>
+
+        <script>
+            //AJAX INPUT -- Password Validator
+            document.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById('password-form');
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                
+            const password = document.getElementById('pw-id').value;
+
+            fetch ('livePasswordChecker.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded', },
+                body: 'password=' + encodeURIComponent(password)
+            })
+
+            .then(response => response.json())
+            .then(data => {
+                if(data.status === 'success') {
+                    document.getElementById('password-section').hidden = true;
+                    document.getElementById('survey-form').hidden = false;
+                } else {
+                    document.getElementById('error-message').textContent = data.message;
+                }
+            })
+        });
+    });
+        </script>
+
+
+<!--Where form actually starts, everything under is hidden until pass entered-->
+<form action="project1submit.php" method="post" class="survey" id="survey-form" hidden>
+
 
 <div class = "form-group">
     <fieldset>
@@ -19,40 +60,36 @@
     </fieldset>
 </div>
 
-<script>
-    //AJAX INPUT -- Email validator 
-document.addEventListener("DOMContentLoaded", () => {
-    const emailInput = document.getElementById("email-id");
-    const emailMsg = document.getElementById("email-msg");
+        <script>
+            //AJAX INPUT -- Email validator for HTML above
+        document.addEventListener("DOMContentLoaded", () => {
+            const emailInput = document.getElementById("email-id");
+            const emailMsg = document.getElementById("email-msg");
 
-    emailInput.addEventListener("input", () => {
-        const email = emailInput.value.trim();
+            emailInput.addEventListener("input", () => {
+                const email = emailInput.value.trim();
 
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-        if (!regex) {
-            emailMsg.textContent = "invalid email"
-            emailMsg.className = "text-info"
-            return;
-        }
+                if (!regex) {
+                    emailMsg.textContent = "invalid email"
+                    emailMsg.className = "text-info"
+                    return;
+                }
 
-        fetch("liveEmailChecker.php", { method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: "email=" + encodeURIComponent(email) })
+                fetch("liveEmailChecker.php", { method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: "email=" + encodeURIComponent(email) })
 
-          .then(response => response.text())
-          .then(data => {
+                .then(response => response.text())
+                .then(data => {
 
-            emailMsg.textContent = "Email is valid: " + email;
+                    emailMsg.textContent = "Email is valid: " + email;
+                });
+            });
         });
-    });
-});
-</script>
+        </script>
 
-<fieldset>
-    <label>Enter your password: </label>
-    <input type="password" name="pw-name" id="pw-id" required>
-</fieldset>
 
 <div>
 <label>What age are you? </label>
