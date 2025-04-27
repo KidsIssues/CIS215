@@ -68,6 +68,7 @@
 
             emailInput.addEventListener("input", () => {
                 const email = emailInput.value.trim();
+                String.prototype.toLowerCase(email);
 
                 const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
