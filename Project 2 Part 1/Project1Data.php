@@ -15,10 +15,13 @@
     </div>
     
 <!--This displays code that allows user to search data on the page-->
-      <script>
-    function searchData(event){
+      <script> /* ajax solution */
+    async function searchData(event){
       event.preventDefault(); /* stops form from automatically submitting */
       const keyword = document.getElementById('search-id').value;
+      const response = await fetch('simple.php');
+      const data = await response.text();
+      console.log(data);
     }
       document.getElementById('search_form').addEventListener('submit', searchData);
         </script>
