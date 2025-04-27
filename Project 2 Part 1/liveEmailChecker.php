@@ -21,11 +21,12 @@
     
     $stmt->bindParam(":front", $front);
     $stmt->bindParam(":back", $back);
-    
+
     $stmt->execute();
     $email_count = $stmt->fetchColumn();
 
     if( $email_count > 0){
-        return "Only one entry per email.";
+        echo "Only one entry per email.";
+        exit;
     }
 ?>

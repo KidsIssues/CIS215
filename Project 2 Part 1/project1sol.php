@@ -79,11 +79,13 @@
 
                 fetch("liveEmailChecker.php", { method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: "email=" + encodeURIComponent(email) })
+                    body: "email-name=" + encodeURIComponent(email) })
 
                 .then(response => response.text())
                 .then(data => {
-
+                    if (data.trim() === "Only one entry per email.") {
+                    emailMsg.textContent = data;
+                    }
                     emailMsg.textContent = "Email is valid: " + email;
                 });
             });

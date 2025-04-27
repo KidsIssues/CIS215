@@ -38,6 +38,7 @@ function validate(){
 
 
     $email = filter_var($_POST["email-name"], FILTER_VALIDATE_EMAIL);
+    strtolower($email);
 
     $email_pieces = explode("@", $email);
     $front = $email_pieces[0] . "%";
