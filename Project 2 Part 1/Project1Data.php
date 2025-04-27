@@ -12,13 +12,15 @@
       <input class="search_text" type="text" id="search-id" placeholder="Search"/>
         <input class="search_submit" type="submit" value="search"/>
       </form>
+    </div>
+    
 <!--This displays code that allows user to search data on the page-->
       <script>
-    function searchData(){
-    const keyword = document.getElementById('search-id').value;
-      document.getElementById('search_form').addEventListener('submit', (event) {
-        event.preventDefault(); /* stops form from automatically submitting */
-    });
+    function searchData(event){
+      event.preventDefault(); /* stops form from automatically submitting */
+      const keyword = document.getElementById('search-id').value;
+    }
+      document.getElementById('search_form').addEventListener('submit', searchData);
         </script>
   </body>
 </html>
