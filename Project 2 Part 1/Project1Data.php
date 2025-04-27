@@ -9,8 +9,8 @@
     <!---This is the section where users can use the search bar ----->
     <div id="search-bar-section">
       <form id="search_form">
-      <input class="search_text" type="text" id="search-id" placeholder="Search"
-        <input class="search_submit" type="submit" value="search"
+      <input class="search_text" type="text" id="search-id" placeholder="Search"/>
+        <input class="search_submit" type="submit" value="search"/>
         <button>Go</button>
       </form>
 <!--This displays code that allows user to search data on the page-->
