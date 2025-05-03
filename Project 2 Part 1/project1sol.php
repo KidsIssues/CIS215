@@ -91,7 +91,7 @@ for($i=13;$i<65;$i=$i + 5){
 
 </form>
 <div>
-    <a href='project1data.php'><p>View data page here</p></a>
+    <a href='project1Data.php'><p>View data page here</p></a>
 </div>
 
 

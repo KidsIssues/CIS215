@@ -1,50 +1,3 @@
-<!-- This displays all code for the search bar available on the page -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Search Bar</title>
-  </head>
-  <body>
-    
-    <!---This is the section where users can use the search bar ----->
-    <div id="search-bar-section">
-      <form id="search_form">
-      <input class="search_text" type="text" id="search-id" placeholder="Search"/>
-        <input class="search_submit" type="submit" value="search"/>
-      </form>
-    </div>
-    
-<!--This displays code that allows user to search data on the page-->
-      <script> /* ajax solution */
-    async function searchData(event){
-      event.preventDefault(); /* stops form from automatically submitting */
-      const keyword = document.getElementById('search-id').value;
-      const response = await fetch('simple.php');
-      const data = await response.text();
-      console.log(data);
-    }
-      document.getElementById('search_form').addEventListener('submit', searchData);
-        </script>
-
-    /**
-    * This area displays code regarding the character count
-    */
-
-  <script>
-    const maxChars = 500;
-    document.getElementById("search-id").addEventListener("input", function() {
-    const 
-      const
-      
-    
-    
-    }
-  </script>
-  </body>
-</html>
-<!-- Here marks the end of the search bar code-->
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -278,25 +231,15 @@ foreach(favorite_thing() as $value){
 print("</div>");
 
 ?>
-<!--change background color of page-->
 <div>
   <input type="color" id="body" name="body" value="#ffffff" />
-  <label for="body">Change Background Color.</label>
+  <label for="body">Change Background Color</label>
 </div>
 
-<!--change text color of page-->
 <div>
   <input type="color" id="text-color" name="text-color" value="#000000" />
-  <label for="text-color">Change Text Color.</label>
+  <label for="text-color">Change Text Color</label>
 </div>
-
-<!--Form to put in email to delete data.-->
-<form id = "deleteDataForm">
-    <label for="deleteEmail">Enter email to delete data.</label>
-    <input type="email" id="delete-email-id" name="delete-email-name">
-    <button type="submit">Delete Data.</button>
-    <p id="ConfirmationMessage"></p>
-</form>
 
     <script src="project1events.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
