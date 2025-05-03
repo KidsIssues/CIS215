@@ -10,18 +10,19 @@
         exit;
     }
 
-    $email_pieces = explode("@", $email);
 
+    $email_pieces = explode("@", $email);
     $front = $email_pieces[0] . "%";
     $back = "%" . $email_pieces[1];
+
 
     //prepare and execute statement to project_data, count all emails like the one we sent
     global $db;
     $stmt = $db->prepare("SELECT count(email) FROM project_data WHERE email LIKE :front AND email LIKE :back");
-    
+
     $stmt->bindParam(":front", $front);
     $stmt->bindParam(":back", $back);
-
+    
     $stmt->execute();
     $email_count = $stmt->fetchColumn();
 
