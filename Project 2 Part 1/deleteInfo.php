@@ -11,24 +11,33 @@
     }
 
 
+    
     $email_pieces = explode("@", $email);
     $front = $email_pieces[0] . "%";
     $back = "%" . $email_pieces[1];
 
 
-    //prepare and execute statement to project_data, count all emails like the one we sent
+
+    //delete the row that has the email, then check if the email is still there.
     global $db;
-    $stmt = $db->prepare("SELECT count(email) FROM project_data WHERE email LIKE :front AND email LIKE :back");
+    $stmt = $db->prepare("DELETE FROM project_data WHERE email email = :email");
 
-    $stmt->bindParam(":front", $front);
-    $stmt->bindParam(":back", $back);
-    
+    $stmt->bindParam(":email", $email);
     $stmt->execute();
-    $email_count = $stmt->fetchColumn();
 
+
+
+    //checks to see if email is there, responds if it is or isnt.
+    $stmt = $db->prepare("SELECT count(email) FROM project_data WHERE email email = :email");
+
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
+
+    $email_count = $stmt->fetchColumn();
     if( $email_count > 0){
-        echo "Only one entry per email.";
-        exit;
+        echo "sorry, couldnt delete email.";
+    } else {
+        echo "successfully Deleted!";
     }
 
     

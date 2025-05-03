@@ -1,7 +1,11 @@
+document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", passValidate);
+    document.addEventListener("DOMContentLoaded", emailValidate);
+    document.addEventListener("DOMContentLoaded", deleteEmailData);
+});
+
 document.addEventListener("DOMContentLoaded", changeBackgroundColor);
 document.addEventListener("DOMContentLoaded", changeTextColor);
-document.addEventListener("DOMContentLoaded", passValidate);
-document.addEventListener("DOMContentLoaded", emailValidate);
 
 
 //turning the pass validator into a function for easy use in the future
@@ -79,11 +83,33 @@ function changeTextColor() {
             });
         }
 
-
+//Delete email data
 function deleteEmailData() {
     const deleteDataForm = document.getElementById("deleteDataForm");
 
-    if (deleteDataForm) {
+        deleteDataForm.addEventListener("submit", (event) => {
+            event.preventDefault();
 
+
+            const emailInput = document.getElementById("delete-email-id");
+            const email = emailInput.value.trim();
+            const emailMsg = document.getElementById("ConfirmationMessage");
+
+            fetch ("deleteinfo.php", { method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "email=" + encodeURIComponent(email) })
+
+                .then(response => response.text())
+                .then(data => {
+                    if (data.trim() === "sorry, couldnt delete email.") {
+                        emailMsg.textContent = "Couldn't delete email";
+                        } else if (data.trim() === "invalid") {
+                            emailMsg.textContent = "Invalid email address."
+                        } else {
+                            emailMsg.textContent = "email has been removed: " + email;
+                            emailInput.value = "";
+                        }
+                        
+                });
+        });
     }
-}

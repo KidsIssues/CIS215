@@ -1,4 +1,4 @@
-<! --This displays all code for the search bar available on the page--- >
+<!-- This displays all code for the search bar available on the page -->
 <!DOCTYPE html>
 <html>
   <head>
