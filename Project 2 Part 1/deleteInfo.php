@@ -1,9 +1,9 @@
-<!--checks to see whether emails are in the database-->
+<!--deletes info out of database-->
 <?php 
     require ('dbconfig.php');
     $db = connectDB();
 
-    $email = filter_var($_POST["email-name"], FILTER_VALIDATE_EMAIL);
+    $email = filter_var($_POST["delete-email-name"], FILTER_VALIDATE_EMAIL);
 
     if (!$email) {
         echo "invalid";

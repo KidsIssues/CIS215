@@ -79,12 +79,6 @@ for($i=13;$i<65;$i=$i + 5){
 
 <button type="submit" name="button-submit-form" id = "button-submit-form-id">Submit</button>
 
-</form>
-<div>
-    <a href='project1data.php'><p>View data page here</p></a>
-</div>
-
-
 <div>
   <input type="color" id="body" name="body" value="#ffffff" />
   <label for="body">Change Background Color</label>
@@ -94,6 +88,12 @@ for($i=13;$i<65;$i=$i + 5){
   <input type="color" id="text-color" name="text-color" value="#000000" />
   <label for="text-color">Change Text Color</label>
 </div>
+
+</form>
+<div>
+    <a href='project1data.php'><p>View data page here</p></a>
+</div>
+
 
     <script src="project1events.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", changeBackgroundColor);
 document.addEventListener("DOMContentLoaded", changeTextColor);
-document.addEventListener("DOMContentLoaded", () => {
-    passValidate();
-    emailValidate();
-});
+document.addEventListener("DOMContentLoaded", passValidate);
+document.addEventListener("DOMContentLoaded", emailValidate);
 
 
 //turning the pass validator into a function for easy use in the future
@@ -64,7 +62,7 @@ function emailValidate() {
 
 
 
-
+//changes background color for all 3 pages
   function changeBackgroundColor() {
     const backgoundColorInput = document.getElementById("body");
 
@@ -73,12 +71,19 @@ function emailValidate() {
     });
   }
 
-
+//changes text color for all 3 pages
 function changeTextColor() {
     const colorInput = document.querySelector("#text-color");
-    colorInput.addEventListener("input", function () {
-    document.body.style.color = this.value;
-    });
+        colorInput.addEventListener("input", (event) => {
+            document.body.style.color = event.target.value;
+            });
+        }
+
+
+function deleteEmailData() {
+    const deleteDataForm = document.getElementById("deleteDataForm");
+
+    if (deleteDataForm) {
+
+    }
 }
-
-
