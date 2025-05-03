@@ -1,3 +1,35 @@
+<! --This displays all code for the search bar available on the page--- >
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Bar</title>
+  </head>
+  <body>
+    
+    <!---This is the section where users can use the search bar ----->
+    <div id="search-bar-section">
+      <form id="search_form">
+      <input class="search_text" type="text" id="search-id" placeholder="Search"/>
+        <input class="search_submit" type="submit" value="search"/>
+      </form>
+    </div>
+    
+<!--This displays code that allows user to search data on the page-->
+      <script> /* ajax solution */
+    async function searchData(event){
+      event.preventDefault(); /* stops form from automatically submitting */
+      const keyword = document.getElementById('search-id').value;
+      const response = await fetch('simple.php');
+      const data = await response.text();
+      console.log(data);
+    }
+      document.getElementById('search_form').addEventListener('submit', searchData);
+        </script>
+  </body>
+</html>
+<!-- Here marks the end of the search bar code-->
+
+
 <!DOCTYPE html>
 <html>
     <head>
