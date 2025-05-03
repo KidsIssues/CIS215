@@ -116,7 +116,7 @@ function add_data(){
 
 if(validate()==""){
     print("<div>Thanks for your submission!</div>");
-    print("<div><a href='project1Data.php'>View data page here</a></div>");
+    print("<div><a href='Project1Data.php'>View data page here</a></div>");
     add_data();
 } else{
     print("<div>We could not take your data at this time</div>");
