@@ -25,6 +25,21 @@
     }
       document.getElementById('search_form').addEventListener('submit', searchData);
         </script>
+
+    /**
+    * This area displays code regarding the character count
+    */
+
+  <script>
+    const maxChars = 500;
+    document.getElementById("search-id").addEventListener("input", function() {
+    const 
+      const
+      
+    
+    
+    }
+  </script>
   </body>
 </html>
 <!-- Here marks the end of the search bar code-->
