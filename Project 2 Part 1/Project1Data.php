@@ -231,6 +231,36 @@ foreach(favorite_thing() as $value){
 print("</div>");
 
 ?>
+
+/** 
+    * other textbox
+    * allows users to input other gender not provided in form
+    *submit
+*/
+<h2>Select Gender</h2>
+    <form method="POST">
+        <div class="form-gender">
+            <label for="gender">Gender:</label>
+            <select name="gemder" id="gender" required>
+                <option value="male">Male</option>
+                <option value="male">Female</option>
+                <option value="male">Nonbinary</option>
+                <option value="male">Genderfluid</option>
+                <option value="male">Agender</option>
+                <option value="male">Other, Choose Not To Say</option>
+            </select>
+        </div>
+        <div class="form-group" id="other-gender=container" style="display:none;">
+            <label for="other_gender">Optional: Enter your gender</label>
+            <input type="text" name="other_gender" id="other_gender"/>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    /**
+    * Here is the end of the other textbox code
+    */
+                
 <div>
   <input type="color" id="body" name="body" value="#ffffff" />
   <label for="body">Change Background Color</label>
