@@ -78,3 +78,5 @@ function changeTextColor() {
             document.body.style.color = event.target.value;
             });
         }
+
+

@@ -79,11 +79,13 @@ for($i=13;$i<65;$i=$i + 5){
 
 <button type="submit" name="button-submit-form" id = "button-submit-form-id">Submit</button>
 
+<!--Change background color-->
 <div>
   <input type="color" id="body" name="body" value="#ffffff" />
   <label for="body">Change Background Color</label>
 </div>
 
+<!--Change text color-->
 <div>
   <input type="color" id="text-color" name="text-color" value="#000000" />
   <label for="text-color">Change Text Color</label>
