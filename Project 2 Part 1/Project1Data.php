@@ -240,7 +240,7 @@ print("</div>");
 <h2>Select Gender</h2>
     <form method="POST">
         <div class="form-gender">
-            <label for="gender">Gender:</label>
+            <label for="gender" data-tooltip= "Please select your gender here">Gender:</label>
             <select name="gemder" id="gender" required>
                 <option value="male">Male</option>
                 <option value="male">Female</option>
@@ -251,7 +251,7 @@ print("</div>");
             </select>
         </div>
         <div class="form-group" id="other-gender=container" style="display:none;">
-            <label for="other_gender">Optional: Enter your gender</label>
+            <label for="other_gender" data-tooltip= "Please type in your gender here">Optional: Enter your gender</label>
             <input type="text" name="other_gender" id="other_gender"/>
         </div>
         <button type="submit">Submit</button>
