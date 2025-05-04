@@ -232,11 +232,11 @@ print("</div>");
 
 ?>
 
-/** 
-    * other textbox
-    * allows users to input other gender not provided in form
-    *submit
-*/
+<!-- 
+    other textbox
+    allows users to input other gender not provided in form
+    submit    
+-->
 <h2>Select Gender</h2>
     <form method="POST">
         <div class="form-gender">
@@ -257,9 +257,7 @@ print("</div>");
         <button type="submit">Submit</button>
     </form>
 
-    /**
-    * Here is the end of the other textbox code
-    */
+<!--Here is the end of the other textbox code-->
                 
 <div>
   <input type="color" id="body" name="body" value="#ffffff" />
