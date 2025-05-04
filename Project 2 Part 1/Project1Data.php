@@ -243,7 +243,7 @@ print("</div>");
 
 <!--Form to put in email to delete data.-->
 <form id = "delete-Form">
-    <label for="deleteEmail">Enter email to delete data.</label>
+    <label for="deleteEmail">Delete My Data.</label>
     <input type="email" id="delete-email-id" name="delete-email-name">
     <button type="submit">Delete Data.</button>
     <p id="ConfirmationMessage"></p>

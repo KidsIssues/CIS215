@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", deleteEmailData);
-
+document.addEventListener("DOMContentLoaded", changeBackgroundColor);
+document.addEventListener("DOMContentLoaded", changeTextColor);
 
 //Delete email data
 function deleteEmailData() {
@@ -20,11 +21,12 @@ function deleteEmailData() {
 
                 .then(response => response.text())
                 .then(data => {
-                    if (data.trim() === "Deleted") {
-                        emailMsg.textContent = "We deleted the email, and information with it!" + email;
+                    console.log(data);
+                    if (data.trim() === "deleted") {
+                        emailMsg.textContent = "We deleted the email, and information with it! " + email;
                         } else if (data.trim() === "notFound") {
                             emailMsg.textContent = "We couldn't find the email you gave us."
-                        } else if (data.trim() === "Invalid") {
+                        } else if (data.trim() === "invalid") {
                             emailMsg.textContent = "invalid email";
                         }
                         
