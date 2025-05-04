@@ -62,7 +62,7 @@ function emailValidate() {
 
 
 
-//changes background color for all 3 pages
+//changes background color for project1submit.php & project1sol.php
   function changeBackgroundColor() {
     const backgoundColorInput = document.getElementById("body");
 
@@ -71,7 +71,7 @@ function emailValidate() {
     });
   }
 
-//changes text color for all 3 pages
+//changes text color for project1submit.php & project1sol.php
 function changeTextColor() {
     const colorInput = document.querySelector("#text-color");
         colorInput.addEventListener("input", (event) => {

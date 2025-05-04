@@ -36,7 +36,7 @@ function deleteEmailData() {
     
 
 
-    //changes background color for all 3 pages
+    //changes background color for project1Data.php
   function changeBackgroundColor() {
     const backgoundColorInput = document.getElementById("body");
 
@@ -45,7 +45,7 @@ function deleteEmailData() {
     });
   }
 
-//changes text color for all 3 pages
+//changes text color for project1Data.php
 function changeTextColor() {
     const colorInput = document.querySelector("#text-color");
         colorInput.addEventListener("input", (event) => {
