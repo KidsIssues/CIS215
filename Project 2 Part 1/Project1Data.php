@@ -250,7 +250,7 @@ print("</div>");
                 <option value="male">Other, Choose Not To Say</option>
             </select>
         </div>
-        <div class="form-groupo" id="other-gender=container" style="display:none;">
+        <div class="form-group" id="other-gender=container" style="display:none;">
             <label for="other_gender">Optional: Enter your gender</label>
             <input type="text" name="other_gender" id="other_gender"/>
         </div>
